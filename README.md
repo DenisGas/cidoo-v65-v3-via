@@ -1,79 +1,136 @@
 # CIDOO V65 V3 VIA Config Fix
 
-This repository contains an **updated VIA JSON configuration** for the CIDOO V65 V3 keyboard.
+This repository provides an **updated VIA JSON configuration** for the CIDOO V65 V3 keyboard.
 
-## 🛠 Background
-
-On this keyboard, standard commands for brightness control and battery display did **not work as expected**. After investigation, it turned out that the **keycodes were in the wrong order in the firmware**, which caused VIA to display incorrect labels and functions.
-
-This fix **only reorders and renames the keycodes in VIA** so that the labels now correctly match their real functions. Firmware logic remains untouched.
+It fixes incorrect key ordering in the OEM JSON that caused brightness and battery commands to behave incorrectly in VIA.
 
 ---
 
-## ⚡ Key Changes (with proper order)
+# 🛠 Background
 
-| Original (OEM)                                                                           | Fixed for VIA                                                                | Function                            |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------- |
-| `DESKTOP LIGHT LOW` <br>title: "desktop lihgt low" <br>shortName: "DESKTOP LIGHT LOW"    | `MAYBE KEY SCAN DELAY` <br>title: "KEY SCAN DELAY" <br>shortName: "KSDELAY"  | OEM function (technical scan delay) |
-| `DESKTOP LIGHT HIGH` <br>title: "desktop lihgt high" <br>shortName: "DESKTOP LIGHT HIGH" | `DESKTOP LIGHT LOW` <br>title: "Brightness decrease" <br>shortName: "BRI −"  | Decrease brightness                 |
-| `BATTERY STATUS` <br>title: "BATT_SHOW" <br>shortName: "BATT ST"                         | `DESKTOP LIGHT HIGH` <br>title: "Brightness increase" <br>shortName: "BRI +" | Increase brightness                 |
-| `KEY SCAN DELAY` <br>title: "KEY SCAN DELAY" <br>shortName: "KSDELAY"                    | `BATTERY STATUS` <br>title: "Show battery level" <br>shortName: "BATT"       | Display battery level               |
+On the OEM version of the CIDOO V65 V3, several standard commands:
 
-> ⚠️ Note: The actual behavior of the buttons is determined by the firmware. This update only corrects **VIA labels and order** so they match real functions.
+* Brightness increase
+* Brightness decrease
+* Battery status
 
----
+did not work as expected inside VIA.
 
-## 🎨 Visual Guide for VIA
+After investigation, it turned out that **the keycodes were placed in the wrong order** in the original JSON definition. Because VIA depends on the order of custom keycodes, the labels did not match the real firmware behavior.
 
-* **BRI − (DESKTOP LIGHT LOW)** – decreases underglow/desktop brightness
-* **BRI + (DESKTOP LIGHT HIGH)** – increases underglow/desktop brightness
-* **BATT (BATTERY STATUS)** – shows current battery level
-* **KSDELAY (MAYBE KEY SCAN DELAY)** – technical scan delay / OEM function
-  
----
+This fix:
 
-## 💾 Download
+* Reorders the keycodes
+* Corrects their labels
+* Keeps firmware logic untouched
 
-* [VIA 2.4G mode JSON](#)
-* [VIA Wired (USB) mode JSON](#)
-
-Use these files directly in VIA to correct the labels and order for your CIDOO V65 V3 keyboard.
+No flashing or firmware modification is required.
 
 ---
 
-## 📌 References
+# ⚡ Key Changes (Corrected Order)
 
-Original Epomaker files: 
-* [VIA 2.4G mode JSON](https://epomaker.com/blogs/via-json/cidoo-v65-v3-2-4g-json-file)
-* [VIA Wired (USB) mode JSON](https://epomaker.com/blogs/via-json/cidoo-v65-v3-usb)
-* [Manual](https://epomaker.com/blogs/manuals/cidoo-v65-v3-manual)
+| Original (OEM)                                                                           | Fixed for VIA                                                                | Function               |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------- |
+| `DESKTOP LIGHT LOW` <br>title: "desktop lihgt low" <br>shortName: "DESKTOP LIGHT LOW"    | `MAYBE KEY SCAN DELAY` <br>title: "KEY SCAN DELAY" <br>shortName: "KSDELAY"  | OEM technical function |
+| `DESKTOP LIGHT HIGH` <br>title: "desktop lihgt high" <br>shortName: "DESKTOP LIGHT HIGH" | `DESKTOP LIGHT LOW` <br>title: "Brightness decrease" <br>shortName: "BRI −"  | Decrease brightness    |
+| `BATTERY STATUS` <br>title: "BATT_SHOW" <br>shortName: "BATT ST"                         | `DESKTOP LIGHT HIGH` <br>title: "Brightness increase" <br>shortName: "BRI +" | Increase brightness    |
+| `KEY SCAN DELAY` <br>title: "KEY SCAN DELAY" <br>shortName: "KSDELAY"                    | `BATTERY STATUS` <br>title: "Show battery level" <br>shortName: "BATT"       | Display battery level  |
+
+> ⚠️ Important:
+> The real behavior of the buttons is defined by the firmware.
+> This update only fixes VIA labels and their order.
 
 ---
 
-# How to Add the Keyboard to VIA (Chrome Only)
+# 📊 Layout Comparison
 
-> ⚠️ Use **Google Chrome**. Other browsers may not properly detect the keyboard.
+## ❌ Incorrect VIA Layout (OEM JSON)
+
+With the original OEM JSON file, VIA displays incorrect labels and mismatched key behavior.
+
+<img width="1910" height="725" alt="image" src="https://github.com/user-attachments/assets/07429377-0ea3-423c-a2a2-c23eb0923939" />
+
+### Issues:
+
+* Brightness controls reversed
+* Battery function mapped incorrectly
+* Key order does not reflect firmware behavior
 
 ---
 
-## 1️⃣ Download the JSON File
+## ✅ Correct VIA Layout (Fixed JSON)
 
-Download the VIA JSON file:
+After applying the updated JSON from this repository, VIA displays the correct layout and behavior.
 
-* Use the fixed version from this repository
-* Or download the original file from the official Epomaker website
+<img width="1919" height="783" alt="image" src="https://github.com/user-attachments/assets/d3974a61-4a49-46eb-bf63-fa68ebaaae3f" />
 
-Make sure you download the correct version for your connection mode:
+### Fixes:
 
-* **Wired (USB)**
-* **2.4G Wireless**
+* Keycodes reordered properly
+* Brightness increase/decrease labeled correctly
+* Battery status correctly assigned
+* Layout now matches real hardware behavior
+
+---
+
+# 🎨 Visual Function Guide
+
+* **BRI − (DESKTOP LIGHT LOW)** → Decrease brightness
+* **BRI + (DESKTOP LIGHT HIGH)** → Increase brightness
+* **BATT (BATTERY STATUS)** → Show battery level
+* **KSDELAY (MAYBE KEY SCAN DELAY)** → OEM scan delay function
+
+---
+
+# 💾 Download
+
+* VIA 2.4G mode JSON
+* VIA Wired (USB) mode JSON
+
+Use the file that matches your current connection mode.
+
+---
+
+# 📌 Official References
+
+Original files from Epomaker:
+
+* VIA 2.4G JSON
+  [https://epomaker.com/blogs/via-json/cidoo-v65-v3-2-4g-json-file](https://epomaker.com/blogs/via-json/cidoo-v65-v3-2-4g-json-file)
+
+* VIA Wired (USB) JSON
+  [https://epomaker.com/blogs/via-json/cidoo-v65-v3-usb](https://epomaker.com/blogs/via-json/cidoo-v65-v3-usb)
+
+* Manual
+  [https://epomaker.com/blogs/manuals/cidoo-v65-v3-manual](https://epomaker.com/blogs/manuals/cidoo-v65-v3-manual)
+
+---
+
+# 🔧 How to Add the Keyboard to VIA (Chrome Only)
+
+> ⚠️ Use Google Chrome. Other browsers may not detect the keyboard properly.
+
+---
+
+## 1️⃣ Download the JSON
+
+Download the JSON file:
+
+* From this repository (fixed version)
+* Or from the official Epomaker website
+
+Make sure you choose the correct version:
+
+* Wired (USB)
+* 2.4G Wireless
 
 ---
 
 ## 2️⃣ Open VIA
 
 Go to:
-👉 [https://www.usevia.app/](https://www.usevia.app/)
+[https://www.usevia.app/](https://www.usevia.app/)
 
 ---
 
@@ -85,17 +142,17 @@ Click the **Settings** icon.
 
 ---
 
-## 4️⃣ Enable the Design Tab
+## 4️⃣ Enable Design Tab
 
-Turn on the toggle to show the **Design** tab.
+Enable the toggle to show the **Design** tab.
 
 <img width="1919" height="613" alt="image" src="https://github.com/user-attachments/assets/32adf9c1-25a3-4fca-ae48-a789e923be64" />
 
 ---
 
-## 5️⃣ Open the Design Tab
+## 5️⃣ Open Design Tab
 
-Go to the **Design** tab (brush icon).
+Click the **Design** tab (brush icon).
 
 <img width="1916" height="588" alt="image" src="https://github.com/user-attachments/assets/5835d394-b762-4819-8cfe-c6eaec38e6ff" />
 
@@ -105,7 +162,7 @@ Go to the **Design** tab (brush icon).
 
 Turn ON:
 
-**“Use V2 definitions (deprecated)”**
+**Use V2 definitions (deprecated)**
 
 <img width="1611" height="704" alt="image" src="https://github.com/user-attachments/assets/187ba398-b675-4c5b-a259-225ca828e6dc" />
 
@@ -121,10 +178,7 @@ Press the **Load** button.
 
 ## 8️⃣ Select the Correct JSON File
 
-Choose the VIA JSON file that matches your current connection mode:
-
-* Wired (USB)
-* 2.4G Wireless
+Choose the JSON file that matches your current connection mode.
 
 <img width="698" height="288" alt="image" src="https://github.com/user-attachments/assets/2459abc1-db08-4edc-80dc-741fc15de368" />
 
@@ -138,7 +192,7 @@ After loading the file, select your keyboard from the list.
 
 ---
 
-## 🔟 Go to the Configure Tab
+## 🔟 Go to Configure Tab
 
 Switch to the **Configure** tab (keyboard icon).
 
@@ -148,25 +202,19 @@ Switch to the **Configure** tab (keyboard icon).
 
 ## ✅ Done
 
-Your keyboard should now be correctly detected in VIA and ready for customization.
+Your keyboard should now be properly detected and ready for customization.
 
 <img width="1916" height="903" alt="image" src="https://github.com/user-attachments/assets/6eb65eb3-1959-408d-bfcb-bab876836829" />
 
 ---
 
-If the keyboard is not detected:
+# 🚨 Troubleshooting
+
+If VIA does not detect the keyboard:
 
 * Make sure you are using **Google Chrome**
-* Check your connection mode (USB / 2.4G)
-* Reload the page and reconnect the keyboard
+* Verify your connection mode (USB or 2.4G)
+* Reload the page
+* Reconnect the keyboard
 
 ---
-
-
-
-
-
-
-
-
-
