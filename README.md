@@ -6,6 +6,16 @@ It fixes incorrect key ordering in the OEM JSON that caused brightness and batte
 
 ---
 
+# 💾 Download
+
+* [VIA 2.4G mode JSON](https://github.com/DenisGas/cidoo-v65-v3-via/releases/download/v1.0.0/CIDOO_V65_V3_2.4G.JSON)
+* [VIA Wired (USB) mode JSON](https://github.com/DenisGas/cidoo-v65-v3-via/releases/download/v1.0.0/CIDOO_V65_V3_USB.JSON)
+
+Use the file that matches your current connection mode.
+
+---
+
+
 # 🛠 Background
 
 On the OEM version of the CIDOO V65 V3, several standard commands:
@@ -80,15 +90,6 @@ After applying the updated JSON from this repository, VIA displays the correct l
 * **BRI + (DESKTOP LIGHT HIGH)** → Increase brightness
 * **BATT (BATTERY STATUS)** → Show battery level
 * **KSDELAY (MAYBE KEY SCAN DELAY)** → OEM scan delay function
-
----
-
-# 💾 Download
-
-* VIA 2.4G mode JSON
-* VIA Wired (USB) mode JSON
-
-Use the file that matches your current connection mode.
 
 ---
 
