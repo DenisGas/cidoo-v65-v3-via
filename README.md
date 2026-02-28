@@ -49,3 +49,124 @@ Original Epomaker files:
 * [Manual](https://epomaker.com/blogs/manuals/cidoo-v65-v3-manual)
 
 ---
+
+# How to Add the Keyboard to VIA (Chrome Only)
+
+> ⚠️ Use **Google Chrome**. Other browsers may not properly detect the keyboard.
+
+---
+
+## 1️⃣ Download the JSON File
+
+Download the VIA JSON file:
+
+* Use the fixed version from this repository
+* Or download the original file from the official Epomaker website
+
+Make sure you download the correct version for your connection mode:
+
+* **Wired (USB)**
+* **2.4G Wireless**
+
+---
+
+## 2️⃣ Open VIA
+
+Go to:
+👉 [https://www.usevia.app/](https://www.usevia.app/)
+
+---
+
+## 3️⃣ Open Settings
+
+Click the **Settings** icon.
+
+<img width="1913" height="899" alt="image" src="https://github.com/user-attachments/assets/8c1e24e4-8b2f-4e4a-b4be-b5af1fed69b0" />
+
+---
+
+## 4️⃣ Enable the Design Tab
+
+Turn on the toggle to show the **Design** tab.
+
+<img width="1919" height="613" alt="image" src="https://github.com/user-attachments/assets/32adf9c1-25a3-4fca-ae48-a789e923be64" />
+
+---
+
+## 5️⃣ Open the Design Tab
+
+Go to the **Design** tab (brush icon).
+
+<img width="1916" height="588" alt="image" src="https://github.com/user-attachments/assets/5835d394-b762-4819-8cfe-c6eaec38e6ff" />
+
+---
+
+## 6️⃣ Enable V2 Definitions
+
+Turn ON:
+
+**“Use V2 definitions (deprecated)”**
+
+<img width="1611" height="704" alt="image" src="https://github.com/user-attachments/assets/187ba398-b675-4c5b-a259-225ca828e6dc" />
+
+---
+
+## 7️⃣ Click Load
+
+Press the **Load** button.
+
+<img width="1826" height="654" alt="image" src="https://github.com/user-attachments/assets/23cdd6b4-f53d-4abc-86ab-a9c8e8811952" />
+
+---
+
+## 8️⃣ Select the Correct JSON File
+
+Choose the VIA JSON file that matches your current connection mode:
+
+* Wired (USB)
+* 2.4G Wireless
+
+<img width="698" height="288" alt="image" src="https://github.com/user-attachments/assets/2459abc1-db08-4edc-80dc-741fc15de368" />
+
+---
+
+## 9️⃣ Select Your Keyboard
+
+After loading the file, select your keyboard from the list.
+
+<img width="1791" height="760" alt="image" src="https://github.com/user-attachments/assets/33b41cb8-ec87-4c0b-bf09-52eacfd0c46c" />
+
+---
+
+## 🔟 Go to the Configure Tab
+
+Switch to the **Configure** tab (keyboard icon).
+
+<img width="1759" height="856" alt="image" src="https://github.com/user-attachments/assets/add7d524-7761-40af-8ecc-3e49dbd33f56" />
+
+---
+
+## ✅ Done
+
+Your keyboard should now be correctly detected in VIA and ready for customization.
+
+<img width="1916" height="903" alt="image" src="https://github.com/user-attachments/assets/6eb65eb3-1959-408d-bfcb-bab876836829" />
+
+---
+
+If the keyboard is not detected:
+
+* Make sure you are using **Google Chrome**
+* Check your connection mode (USB / 2.4G)
+* Reload the page and reconnect the keyboard
+
+---
+
+
+
+
+
+
+
+
+
